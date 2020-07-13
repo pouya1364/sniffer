@@ -65,12 +65,12 @@ void ProcessPacket(unsigned char* buffer, int size)
 	++total;
 	switch (iph->protocol) //Check the Protocol and do accordingly...
 	{
-		case 1:  //ICMP Protocol
+		case 1:  //ICMP Protocol need to add
 			++icmp;
 			//PrintIcmpPacket(Buffer,Size);
 			break;
 		
-		case 2:  //IGMP Protocol
+		case 2:  //IGMP Protocol need to add
 			++igmp;
 			break;
 		
@@ -265,7 +265,7 @@ void PrintData (unsigned char* data , int Size)
 			{
 				if(data[j]>=32 && data[j]<=128) fprintf(logfile,"%c",(unsigned char)data[j]);
 				else fprintf(logfile,".");
-			}
+			} 
 			fprintf(logfile,"\n");
 		}
 	}
