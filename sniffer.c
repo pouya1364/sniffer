@@ -160,7 +160,7 @@ void print_tcp_packet(unsigned char* Buffer, int Size)
 	fprintf(logfile,"Data Payload\n");	
 	PrintData(Buffer + iphdrlen + tcph->doff*4 , (Size - tcph->doff*4-iph->ihl*4) );
 						
-	fprintf(logfile,"\n###########################################################");
+	fprintf(logfile,"\n\n###########################################################");
 }
 
 void print_udp_packet(unsigned char *Buffer , int Size)
@@ -193,7 +193,7 @@ void print_udp_packet(unsigned char *Buffer , int Size)
 	fprintf(logfile,"Data Payload\n");	
 	PrintData(Buffer + iphdrlen + sizeof udph ,( Size - sizeof udph - iph->ihl * 4 ));
 	
-	fprintf(logfile,"\n###########################################################");
+	fprintf(logfile,"\n\n###########################################################");
 }
 
 void print_icmp_packet(unsigned char* Buffer , int Size)
