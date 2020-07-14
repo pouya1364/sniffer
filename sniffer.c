@@ -225,7 +225,7 @@ void print_icmp_packet(unsigned char* Buffer , int Size)
 	fprintf(logfile,"IP Header\n");
 	PrintData(Buffer,iphdrlen);
 		
-	fprintf(logfile,"UDP Header\n");
+	fprintf(logfile,"ICMP Header\n");
 	PrintData(Buffer + iphdrlen , sizeof icmph);
 		
 	fprintf(logfile,"Data Payload\n");	
