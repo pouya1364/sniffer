@@ -67,7 +67,7 @@ void ProcessPacket(unsigned char* buffer, int size)
 	{
 		case 1:  //ICMP Protocol need to add
 			++icmp;
-			//PrintIcmpPacket(Buffer,Size);
+			print_icmp_packet(buffer, size);
 			break;
 		
 		case 2:  //IGMP Protocol need to add
@@ -76,12 +76,12 @@ void ProcessPacket(unsigned char* buffer, int size)
 		
 		case 6:  //TCP Protocol
 			++tcp;
-			print_tcp_packet(buffer , size);
+			print_tcp_packet(buffer, size);
 			break;
 		
 		case 17: //UDP Protocol
 			++udp;
-			print_udp_packet(buffer , size);
+			print_udp_packet(buffer, size);
 			break;
 		
 		default: //Some Other Protocol like ARP etc.
@@ -231,7 +231,7 @@ void print_icmp_packet(unsigned char* Buffer , int Size)
 	fprintf(logfile,"Data Payload\n");	
 	PrintData(Buffer + iphdrlen + sizeof icmph , (Size - sizeof icmph - iph->ihl * 4));
 	
-	fprintf(logfile,"\n###########################################################");
+	fprintf(logfile,"\n\n###########################################################");
 }
 
 void PrintData (unsigned char* data , int Size)
