@@ -194,6 +194,7 @@ void print_udp_packet(unsigned char *Buffer , int Size)
 	PrintData(Buffer + iphdrlen + sizeof udph ,( Size - sizeof udph - iph->ihl * 4 ));
 	
 	fprintf(logfile,"\n\n###########################################################");
+
 }
 
 void print_icmp_packet(unsigned char* Buffer , int Size)
@@ -266,6 +267,7 @@ void PrintData (unsigned char* data , int Size)
 				if(data[j]>=32 && data[j]<=128) fprintf(logfile,"%c",(unsigned char)data[j]);
 				else fprintf(logfile,".");
 			} 
+			//print inside log file
 			fprintf(logfile,"\n");
 		}
 	}
