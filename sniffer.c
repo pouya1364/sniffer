@@ -260,7 +260,7 @@ void PrintData (unsigned char* data , int Size)
 		{
 			for(j=0;j<15-i%16;j++) fprintf(logfile,"   "); //extra spaces
 			
-			fprintf(logfile,"             ");
+			fprintf(logfile,"_______________             ");
 			
 			for(j=i-i%16 ; j<=i ; j++)
 			{
