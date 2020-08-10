@@ -235,6 +235,8 @@ void print_icmp_packet(unsigned char* Buffer , int Size)
 	fprintf(logfile,"\n\n###########################################################");
 }
 
+
+//Create file and write data into it
 void PrintData (unsigned char* data , int Size)
 {
 	
