@@ -15,6 +15,7 @@ void print_ip_header(unsigned char* , int);
 void print_tcp_packet(unsigned char* , int);
 void print_udp_packet(unsigned char * , int);
 void print_icmp_packet(unsigned char* , int);
+void print_igmp_packet(unsigned char* , int);
 void PrintData (unsigned char* , int);
 
 int sock_raw;
@@ -72,6 +73,7 @@ void ProcessPacket(unsigned char* buffer, int size)
 		
 		case 2:  //IGMP Protocol need to add
 			++igmp;
+			print_igmp_packet(buffer, size);
 			break;
 		
 		case 6:  //TCP Protocol
@@ -235,6 +237,21 @@ void print_icmp_packet(unsigned char* Buffer , int Size)
 	fprintf(logfile,"\n\n###########################################################");
 }
 
+void print_igmp_packet(unsigned char* , int);
+{
+	unsigned short iphdrlen;
+	
+	struct iphdr *iph = (struct iphdr *)Buffer;
+	iphdrlen = iph->ihl*4;
+	
+	struct igmphdr *icmph = (struct igmphdr *)(Buffer + iphdrlen);
+			
+	fprintf(logfile,"\n\n***********************IGMP Packet*************************\n");	
+	
+	print_ip_header(Buffer , Size);
+			
+	fprintf(logfile,"\n");
+}
 
 //Create file and write data into it
 void PrintData (unsigned char* data , int Size)
