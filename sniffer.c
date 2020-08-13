@@ -243,7 +243,7 @@ void print_igmp_packet(unsigned char* , int);
 	
 	struct iphdr *iph = (struct iphdr *)Buffer;
 	iphdrlen = iph->ihl*4;
-	
+	//Calculate the package
 	struct igmphdr *icmph = (struct igmphdr *)(Buffer + iphdrlen);
 			
 	fprintf(logfile,"\n\n***********************IGMP Packet*************************\n");	
