@@ -234,7 +234,7 @@ void print_icmp_packet(unsigned char* Buffer , int Size)
 	fprintf(logfile,"Data Payload\n");	
 	PrintData(Buffer + iphdrlen + sizeof icmph , (Size - sizeof icmph - iph->ihl * 4));
 	
-	fprintf(logfile,"\n\n#########################################################");
+	fprintf(logfile,"\n\n###########################################################");
 }
 
 void print_igmp_packet(unsigned char* , int);
