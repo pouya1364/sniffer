@@ -1,5 +1,5 @@
 #include<stdio.h>	//For standard things
-#include<stdlib.h>	//malloc cc
+#include<stdlib.h>	//malloc ccc
 #include<string.h>	//memset
 #include<netinet/ip_icmp.h>	//Provides declarations for icmp header
 #include<netinet/udp.h>	//Provides declarations for udp header
