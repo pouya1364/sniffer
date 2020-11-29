@@ -29,7 +29,7 @@ int main()
 	struct sockaddr saddr;
 	struct in_addr in;
 	
-	unsigned char *buffer = (unsigned char *)malloc(65536); //Its Big!
+	unsigned char *buffer = (unsigned char *)malloc(65536); //It is Big!
 	
 	logfile=fopen("log.txt","w");
 	if(logfile==NULL) printf("Unable to create file.");
